@@ -57,7 +57,7 @@ Source of the CheatSheet: [Complete-SQL-Database-Bootcamp-Zero-to-Mastery](https
 
 A Data type is a classification that defines the type, range of values, allowable operations on the values, and the meaning of the data values.
 
-For a reference to the data types allowable in postgres, see the [Postgres documentation](https://www.postgresql.org/docs/current/datatype.html).
+See the Postgres documentation for a reference to the data types allowable in postgreshttps://www.postgresql.org/docs/current/datatype.html).
 
 ## Querying Data
 
@@ -82,7 +82,7 @@ WHERE condition;
 
 ### AND & OR
 
-The AND and OR operators are used to filter records based on more than one condition.
+The AND and OR operators filter records based on more than one condition.
 
 ```sql
 SELECT column1, column2, ...
@@ -94,6 +94,17 @@ WHERE condition1 AND condition2 AND ...;
 SELECT column1, column2, ...
 FROM table_name
 WHERE condition1 OR condition2 OR ...;
+```
+
+There is a order of operation.
+
+The order of operations for Boolean algebra, from highest to lowest priority, is **NOT, then AND, then OR**.
+
+```SQL
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 = '' AND condition2 == ''
+OR condition3 = '' AND condition4 == ''
 ```
 
 ### ORDER BY
@@ -568,5 +579,6 @@ WHERE column_name LIKE pattern;
 | % | The percent sign represents zero, one, or multiple characters |
 | _ | The underscore represents a single character |
 
+## References
 
-
+[Comparison operators](https://www.postgresql.org/docs/12/functions-comparison.html)
